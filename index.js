@@ -159,7 +159,11 @@ function createXHR(options, callback) {
         options.beforeSend(xhr)
     }
 
-    xhr.send(body)
+	if (body) {
+		xhr.send(body)
+	} else {
+		xhr.send()
+	}
 
     return xhr
 
